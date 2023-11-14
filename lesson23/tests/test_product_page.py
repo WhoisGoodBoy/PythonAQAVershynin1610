@@ -4,6 +4,7 @@ import time
 
 def test_buy_product(product):
     product.click_on_buy_button()
+    product.add_cookie_brownie()
     time.sleep(5)
 
 

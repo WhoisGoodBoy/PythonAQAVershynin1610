@@ -33,4 +33,8 @@ def sub_category(driver):
 @pytest.fixture
 def product(driver):
     driver.get('https://geekach.com.ua/liut-krovi-blood-rage/')
+    driver.add_cookie({'name':'flag', 'value':'red'})
+    print(f'cookie _ga:{driver.get_cookie("flag")}')
+    driver.execute_script('window.localStorage["some stuff to store"] = "Gem"')
+    print(driver.execute_script('return window.localStorage["lastExternalReferrer"];'))
     return ProductPage(driver)
