@@ -15,5 +15,5 @@ def test_filter_by_stock_and_click(category):
 def test_go_to_second_page(category):
     category.go_to_second_pagination_page()
     time.sleep(5)
-    category.got_to_first_element()
+    product = category.got_to_first_element()
 
