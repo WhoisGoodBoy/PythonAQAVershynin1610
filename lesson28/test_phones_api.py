@@ -58,3 +58,8 @@ def test_delete_mac():
     response_deleted_object = infra.delete_an_object(created_mac.json()['id'])
     assert response_deleted_object.json()['message'] == f"Object with id = {created_mac.json()['id']} has been deleted."
 
+
+def test_get_check_filtered_list():
+    filtered_list = infra.get_an_filtred_list_of_objects(['2', '4', '6'])
+    print(filtered_list.json())
+

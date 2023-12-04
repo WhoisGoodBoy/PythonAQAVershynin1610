@@ -28,6 +28,18 @@ class Dog:
 def get_an_object(object_id):
     return requests.get(f'{url}/{object_id}')
 
+
+def get_an_filtred_list_of_objects(list_of_objects:list):
+    ids=''
+    for object_id in list_of_objects:
+        if object_id != list_of_objects[-1]:
+            ids += f'id={object_id}&'
+        else:
+            ids += f'id={object_id}'
+    final_string = f'{url}?{ids}'
+    print(final_string)
+    return requests.get(final_string)
+
 def create_an_object():
     headers = {"content-type":"application/json"}
     object_body = json.dumps({"name": "Apple MacBook Pro 16", "data": {
