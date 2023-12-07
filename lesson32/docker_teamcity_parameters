@@ -1,0 +1,12 @@
+
+docker run --name teamcity-server  \
+    -v C:\teamcity\data:/data/teamcity_server/datadir \
+    -v C:\teamcity\logs:/opt/teamcity/logs  \
+    -p 8111:8111 \
+    jetbrains/teamcity-server
+
+
+docker run --name teamcity-agent  \
+    -v C:\teamcity\agentconf:/data/teamcity_agent/conf \
+    -p 8110:8110 \
+    jetbrains/teamcity-agent
