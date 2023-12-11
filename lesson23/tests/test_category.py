@@ -16,5 +16,5 @@ def test_go_to_second_page(category):
     category.go_to_second_pagination_page()
     time.sleep(5)
     product = category.got_to_first_element()
-    product.
+    product.click_on_buy_button()
 
